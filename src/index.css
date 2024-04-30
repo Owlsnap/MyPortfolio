@@ -1,0 +1,43 @@
+:root {
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  color: rgb(219, 219, 217);
+  overflow-x: hidden;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: 'Azonix';
+  src: url('/Azonix.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MoonBold';
+  src: url('/Moon2.0-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MoonLight';
+  src: url('/Moon2.0-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MoonRegular';
+  src: url('/Moon2.0-Regular.otf') format('opentype');
+}
+
+body {
+  font-family: 'MoonRegular', sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}

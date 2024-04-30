@@ -1,0 +1,152 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(219, 219, 217);
+    background: #2a5172;
+    text-align: center;
+    padding: 6rem 3rem;
+}
+
+.contact__info h2{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-shadow: #000 1px 1px 0px;  
+
+}
+
+.contact__info p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-shadow: #000 1px 1px 0px;  
+
+}
+
+.contact__icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: #092652;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.300);
+}
+
+.contact__icon {
+    transform: scale(1.5);
+    text-decoration: none;
+    color: #03653c;
+}
+
+.contact__icon:hover {
+    color: rgb(219, 219, 217);
+    cursor: pointer;
+    transform: scale(1.8);
+    
+}
+
+
+.contact__mail__phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+} 
+
+.email__phone__icon__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.email__phone__icon__container span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.back__to__top__button {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #03653c;
+    color: rgb(219, 219, 217);
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.back__to__top__button.show {
+    display: block;
+}
+
+.back__to__top__button:hover {
+    background: rgb(219, 219, 217);
+    color: #03653c;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.300);
+}
+
+
+@media screen and (max-width: 768px) {
+    .contact {
+        padding: 8rem 1rem 17rem 1rem;
+    }
+
+    .contact__icons {
+        padding: 1rem;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.300);
+    
+    }
+
+    .contact__icon {
+        transform: scale(1.5);
+
+    }
+
+    .email__phone__icon__container{
+        gap: 1rem;
+  
+    }
+
+    .email__phone__icon__container span {
+        font-size: 0.6rem;
+    }
+    
+
+    .contact__info h2 {
+        font-size: 2rem;
+    }
+
+    .contact__info p {
+        font-size: 1rem;
+    }
+
+    .contact h1 {
+        font-size: 4rem;
+    }
+
+    .back__to__top__button {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+}

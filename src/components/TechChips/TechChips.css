@@ -1,0 +1,92 @@
+.technologies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0rem 3rem;
+    height: 100vh;
+    background: transparent;
+
+}
+
+.chips-container {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.tech-chip {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background: #03653c;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.tech-chip:hover {
+    box-shadow: #00000038 10px 10px 0px;
+    transform: scale(1.1);
+    background-color: white;
+    color: #03653c;
+}
+
+.tech-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #fff;
+    padding: 0rem 3rem;
+
+}
+
+.tech-text h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-shadow: #000 1px 1px 0px;  
+}
+
+.tech-text span {
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: #000 1px 1px 0px;
+}
+
+.tech-text-bottom {
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: #000 1px 1px 0px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .technologies {
+        padding: 0rem 1rem;
+    }
+
+    .tech-text {
+        padding: 0rem 1rem;
+    }
+
+    .tech-text h1 {
+        font-size: 4rem;
+    }
+
+    .chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    
+    }
+    
+}
