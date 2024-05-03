@@ -8,13 +8,13 @@ import Contact from './components/Contact/Contact.jsx'
 function App() {
 
   return (
-    <>
+    <div className='appContainer'>
       <Navbar/>
       <Hero/>
       <TechChips/>
       <Projects/>
       <Contact/>
-    </>
+    </div>
   )
 }
 

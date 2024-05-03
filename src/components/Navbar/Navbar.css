@@ -1,11 +1,11 @@
 .navbar {
     display: flex;
     top: 0;
-    width: 100vw;
+    width: 90%;
     height: 4rem;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 1rem 2rem;
     background: #2a5172;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.300);
 }
@@ -54,6 +54,7 @@
     align-items: center;
     margin-right: 5rem;
     gap: 1rem;
+    max-width: 40rem;
 }
 
 .navbar__link {
@@ -82,7 +83,7 @@
 @media screen and (max-width: 768px) {
     .navbar {
         background: transparent;
-        justify-content: left;
+        justify-content: center;
         width: 62.5%;
         height: 2rem; 
         box-shadow: none; 

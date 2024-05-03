@@ -81,8 +81,8 @@
 .back__to__top__button {
     display: none;
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 6rem;
+    right: 6rem;
     background: #03653c;
     color: rgb(219, 219, 217);
     padding: 1rem;
