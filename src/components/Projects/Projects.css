@@ -21,6 +21,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 50px;
+    max-width: 100%;
 }
 
 .project {
@@ -90,9 +91,10 @@
 }
 
 .double-project-image:hover .project__image__slide__flag {
-    margin-left: -5rem;
-    transform: translateY(-1rem);
+    margin-left: -22rem;
+    transform: translateY(2rem);
     opacity: 1;
+    z-index: 10;
 }
 
 
