@@ -8,6 +8,8 @@ import klarna from "../../assets/klarna.png";
 import password from "../../assets/passwordgenerator.png";
 import advice from "../../assets/advice.png";
 import todo from "../../assets/todo.png";
+import bookstoreOne from "../../assets/bookstoreImageOne.png";
+import bookstoreTwo from "../../assets/bookstoreImgTwo.jpg";
 
 
 
@@ -18,7 +20,32 @@ function Projects() {
         <div className="projects__container">
 
 
+        <div className="project">
+                <div className="double-project-image">
+                    <img
+                        src={bookstoreOne}
+                        alt="bookstore"
+                        className="project__image"
+                    />
+                    <img
+                        src={bookstoreTwo}
+                        alt="bookstore"
+                        className="project__image__slide__flag"
+                    />
+                </div>
+            <div className="project__info">
+                <h2>E-Bookstore with admin dashboard</h2>
+                <p>
+                E-commerce site with login functionality, checkout and admin dashboard to manage products.
+                </p>
+                <a target="_blank" rel="noreferrer" href="https://e-bookstore-app.vercel.app/" className="project__cta">
+                View project
+                </a>
+            </div>
+            </div>
 
+
+            {/* spotify project */}
             <div className="project">
                 <div className="double-project-image">
                     <img
@@ -44,7 +71,7 @@ function Projects() {
             </div>
 
 
-
+            {/* flag app */}
             <div className="project">
             <div className="double-project-image">
                     <img
@@ -71,7 +98,7 @@ function Projects() {
             </div>
 
 
-
+            {/* klarna project */}
             <div className="project">
             <img
                 src={klarna}
@@ -90,7 +117,7 @@ function Projects() {
             </div>
 
 
-
+            {/* password generator */}
             <div className="project">
             <img
                 src={password}
@@ -109,7 +136,7 @@ function Projects() {
             </div>
 
 
-
+            {/* advice generator */}
             <div className="project">
             <img
                 src={advice}
@@ -128,7 +155,7 @@ function Projects() {
             </div>
 
 
-
+            {/* todo app */}
             <div className="project">
             <img
                 src={todo}
