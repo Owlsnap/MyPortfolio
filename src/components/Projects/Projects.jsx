@@ -19,7 +19,7 @@ function Projects() {
       <h1>Projects</h1>
       <div className="projects__container">
         <div className="project">
-            
+
             {/* SuppplementScanner project */}
           <div className="double-project-image">
             <img
@@ -30,7 +30,7 @@ function Projects() {
             <img
               src={supplementScannerTwo}
               alt="supplementscanner"
-              className="project__image__slide__flag"
+              className="project__image__slide"
             />
           </div>
           <div className="project__info">
