@@ -62,7 +62,7 @@ function Projects() {
             <img
               src={bookstoreTwo}
               alt="bookstore"
-              className="project__image__slide__flag"
+              className="project__image__slide"
             />
           </div>
           <div className="project__info">
@@ -113,7 +113,7 @@ function Projects() {
             <img
               src={flagTwo}
               alt="flag app"
-              className="project__image__slide__flag"
+              className="project__image__slide"
             />
           </div>
           <div className="project__info">
@@ -135,7 +135,9 @@ function Projects() {
 
         {/* klarna project */}
         <div className="project">
-          <img src={klarna} alt="klarna" className="project__image" />
+          <div className="project__image__container">
+            <img src={klarna} alt="klarna" className="project__image" />
+          </div>
           <div className="project__info">
             <h2>Klarna Checkout</h2>
             <p>
@@ -155,11 +157,13 @@ function Projects() {
 
         {/* password generator */}
         <div className="project">
-          <img
-            src={password}
-            alt="password generator"
-            className="project__image"
-          />
+          <div className="project__image__container">
+            <img
+              src={password}
+              alt="password generator"
+              className="project__image"
+            />
+          </div>
           <div className="project__info">
             <h2>Password Generator</h2>
             <p>
@@ -179,7 +183,9 @@ function Projects() {
 
         {/* advice generator */}
         <div className="project">
-          <img src={advice} alt="advice generator" className="project__image" />
+          <div className="project__image__container">
+            <img src={advice} alt="advice generator" className="project__image" />
+          </div>
           <div className="project__info">
             <h2>Advice Generator</h2>
             <p>Get random advice from the Advice Slip API.</p>
@@ -196,7 +202,9 @@ function Projects() {
 
         {/* todo app */}
         <div className="project">
-          <img src={todo} alt="advice generator" className="project__image" />
+          <div className="project__image__container">
+            <img src={todo} alt="advice generator" className="project__image" />
+          </div>
           <div className="project__info">
             <h2>ToDo app</h2>
             <p>
