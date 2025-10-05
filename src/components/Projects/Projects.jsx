@@ -82,6 +82,27 @@ function Projects() {
           </div>
         </div>
 
+        {/* todo app */}
+        <div className="project">
+          <div className="project__image__container">
+            <img src={todo} alt="advice generator" className="project__image" />
+          </div>
+          <div className="project__info">
+            <h2>ToDo app</h2>
+            <p>
+              Modern task manager to add, edit and complete todos, all stored locally with ability to search and filter in the todo list.
+            </p>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://to-do-app-rho-mocha.vercel.app/"
+              className="project__cta"
+            >
+              View project
+            </a>
+          </div>
+        </div>
+
         {/* spotify project */}
         <div className="project">
           <div className="double-project-image">
@@ -125,7 +146,7 @@ function Projects() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://661fef747b102661b80139b6--jazzy-churros-740e99.netlify.app/"
+              href="https://world-flag-app.netlify.app/"
               className="project__cta"
             >
               View project
@@ -200,26 +221,6 @@ function Projects() {
           </div>
         </div>
 
-        {/* todo app */}
-        <div className="project">
-          <div className="project__image__container">
-            <img src={todo} alt="advice generator" className="project__image" />
-          </div>
-          <div className="project__info">
-            <h2>ToDo app</h2>
-            <p>
-              Modern task manager to add, edit and complete todos, all stored locally with ability to search and filter in the todo list.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://to-do-app-rho-mocha.vercel.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
