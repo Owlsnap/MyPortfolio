@@ -7,7 +7,7 @@ import flagTwo from "../../assets/flag2.png";
 import klarna from "../../assets/klarna.png";
 import password from "../../assets/passwordgenerator.png";
 import advice from "../../assets/advice.png";
-import todo from "../../assets/todo.png";
+import todo from "../../assets/TODO-app-img.png";
 import bookstoreOne from "../../assets/bookstoreImageOne.png";
 import bookstoreTwo from "../../assets/bookstoreImgTwo.jpg";
 import supplementScannerOne from "../../assets/suppscanner_img1.jpg";
@@ -208,13 +208,12 @@ function Projects() {
           <div className="project__info">
             <h2>ToDo app</h2>
             <p>
-              Simple ToDo app, list and check off tasks or use as a shopping
-              list.
+              Modern task manager to add, edit and complete todos, all stored locally with ability to search and filter in the todo list.
             </p>
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://tangerine-sundae-64a168.netlify.app/"
+              href="https://to-do-app-rho-mocha.vercel.app/"
               className="project__cta"
             >
               View project
