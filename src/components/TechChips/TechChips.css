@@ -14,36 +14,40 @@
 
 /* Continuous Sliding Container */
 .chips-container {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     overflow: hidden;
-    white-space: nowrap;
     position: relative;
     border: 1px solid #333333;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .chips-scroll {
-    display: flex;
-    animation: slide 30s linear infinite;
-    will-change: transform;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }
 
-.chips-track {
-    display: flex;
-    gap: 2rem;
-    padding-right: 2rem;
-    flex-shrink: 0;
-    min-width: 100%;
+.chips-content {
+    display: inline-block;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    animation: scrollChips 40s linear infinite;
+    padding: 1rem 0;
+    white-space: nowrap;
 }
 
-/* Sliding Animation - True Seamless Loop */
-@keyframes slide {
+/* Seamless Infinite Scroll Animation */
+@keyframes scrollChips {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
@@ -146,11 +150,11 @@
     }
 
     .chips-container {
-        width: 80%;
+        width: 95%;
     }
 
-    /* Slower animation on mobile for better readability */
+    /* Faster animation on mobile for better engagement */
     .chips-scroll {
-        animation: slide 40s linear infinite;
+        animation: slide 50s linear infinite;
     }
 }
