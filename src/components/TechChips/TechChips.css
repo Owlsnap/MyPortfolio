@@ -14,15 +14,18 @@
 
 /* Continuous Sliding Container */
 .chips-container {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    border: 1px solid #333333;
+    padding: 1rem 0;
 }
 
 .chips-scroll {
     display: flex;
-    animation: slide 60s linear infinite;
+    animation: slide 30s linear infinite;
     will-change: transform;
 }
 
@@ -31,9 +34,10 @@
     gap: 2rem;
     padding-right: 2rem;
     flex-shrink: 0;
+    min-width: 100%;
 }
 
-/* Sliding Animation */
+/* Sliding Animation - True Seamless Loop */
 @keyframes slide {
     0% {
         transform: translateX(0);
@@ -141,8 +145,12 @@
         font-size: 0.9rem;
     }
 
+    .chips-container {
+        width: 80%;
+    }
+
     /* Slower animation on mobile for better readability */
     .chips-scroll {
-        animation: slide 80s linear infinite;
+        animation: slide 40s linear infinite;
     }
 }
