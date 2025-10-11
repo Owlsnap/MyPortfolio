@@ -12,45 +12,8 @@ function TechChips() {
         </div>
         <div className="chips-container">
             <div className="chips-scroll">
-                <div className="chips-track">
-                    <div className="tech-chip">React</div>
-                    <div className="tech-chip">JavaScript</div>
-                    <div className="tech-chip">HTML</div>
-                    <div className="tech-chip">CSS</div>
-                    <div className="tech-chip">Tailwind</div>
-                    <div className="tech-chip">Node.js</div>
-                    <div className="tech-chip">Express</div>
-                    <div className="tech-chip">MongoDB</div>
-                    <div className="tech-chip">Firebase</div>
-                    <div className="tech-chip">Git</div>
-                    <div className="tech-chip">OpenAi</div>
-                    <div className="tech-chip">Prompt Engineering</div>
-                    <div className="tech-chip">Railway</div>
-                    <div className="tech-chip">Solidity</div>
-                    <div className="tech-chip">Foundry</div>
-                    <div className="tech-chip">Web3.js</div>
-                    <div className="tech-chip">Ethers.js</div>
-                    <div className="tech-chip">Redux</div>
-                </div>
-                <div className="chips-track">
-                    <div className="tech-chip">React</div>
-                    <div className="tech-chip">JavaScript</div>
-                    <div className="tech-chip">HTML</div>
-                    <div className="tech-chip">CSS</div>
-                    <div className="tech-chip">Tailwind</div>
-                    <div className="tech-chip">Node.js</div>
-                    <div className="tech-chip">Express</div>
-                    <div className="tech-chip">MongoDB</div>
-                    <div className="tech-chip">Firebase</div>
-                    <div className="tech-chip">Git</div>
-                    <div className="tech-chip">OpenAi</div>
-                    <div className="tech-chip">Prompt Engineering</div>
-                    <div className="tech-chip">Railway</div>
-                    <div className="tech-chip">Solidity</div>
-                    <div className="tech-chip">Foundry</div>
-                    <div className="tech-chip">Web3.js</div>
-                    <div className="tech-chip">Ethers.js</div>
-                    <div className="tech-chip">Redux</div>
+                <div className="chips-content">
+                    • REACT • JAVASCRIPT • HTML • CSS • TAILWIND • NODE.JS • EXPRESS • MONGODB • FIREBASE • GIT • OPENAI • PROMPT ENGINEERING • RAILWAY • SOLIDITY • FOUNDRY • WEB3.JS • ETHERS.JS • REDUX • REACT • JAVASCRIPT • HTML • CSS • TAILWIND • NODE.JS • EXPRESS • MONGODB • FIREBASE • GIT • OPENAI • PROMPT ENGINEERING • RAILWAY • SOLIDITY • FOUNDRY • WEB3.JS • ETHERS.JS • REDUX • REACT • JAVASCRIPT • HTML • CSS • TAILWIND • NODE.JS • EXPRESS • MONGODB • FIREBASE • GIT • OPENAI • PROMPT ENGINEERING • RAILWAY • SOLIDITY • FOUNDRY • WEB3.JS • ETHERS.JS • REDUX •
                 </div>
             </div>
         </div>
