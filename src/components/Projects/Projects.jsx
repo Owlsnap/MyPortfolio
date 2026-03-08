@@ -1,229 +1,159 @@
-import React from "react";
-import "./Projects.css";
-import spotifyOne from "../../assets/spotifyfull.png";
-import spotifyTwo from "../../assets/spotify2.png";
-import flagOne from "../../assets/flag.png";
-import flagTwo from "../../assets/flag2.png";
-import klarna from "../../assets/klarna.png";
-import password from "../../assets/passwordgenerator.png";
-import advice from "../../assets/advice.png";
-import todo from "../../assets/TODO-app-img.png";
-import bookstoreOne from "../../assets/bookstoreImageOne.png";
-import bookstoreTwo from "../../assets/bookstoreImgTwo.jpg";
-import supplementScannerOne from "../../assets/suppscanner_img1.jpg";
-import supplementScannerTwo from "../../assets/suppscanner_img2.jpg";
+import { useState, useCallback, useRef } from 'react'
+import './Projects.css'
+import osciwave1 from '../../assets/osciwave1.png'
+import osciwave2 from '../../assets/osciwave2.png'
+import spontana1 from '../../assets/spontana1.png'
+import spontana2 from '../../assets/spontana2.png'
+import supplementScannerOne from '../../assets/suppscanner_new.png'
+import supplementScannerTwo from '../../assets/suppscanner_img2.jpg'
+import bookstoreOne from '../../assets/bookstoreImageOne.png'
+import bookstoreTwo from '../../assets/bookstoreImgTwo.jpg'
+import flagOne from '../../assets/flag.png'
+import flagTwo from '../../assets/flag2.png'
+import dex1 from '../../assets/dex1.png'
+
+const projects = [
+  {
+    id: '01',
+    title: 'Osciwave.io',
+    desc: 'Landing page for a mobile app that lets users mint audio files as NFTs and use them as unique payment confirmation sounds.',
+    tags: ['Next.js 15', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Native', 'Wagmi'],
+    live: 'https://osciwave.io',
+    github: 'https://github.com/Owlsnap/Osciwave/tree/master',
+    preview: osciwave1,
+  },
+  {
+    id: '02',
+    title: 'Spontana',
+    desc: 'Stockholm event aggregator built for spontaneous nights out. Pulls live events from Ticketmaster and Visit Stockholm APIs.',
+    tags: ['React', 'JavaScript', 'Supabase', 'React Router', 'Vite'],
+    live: 'https://spontana.app',
+    github: 'https://github.com/Owlsnap/spontana',
+    preview: spontana1,
+  },
+  {
+    id: '03',
+    title: 'Supplement Scanner',
+    desc: 'Barscanning app that gives users a quality analysis on dosage and ingredients, plus use-case descriptions. AI-powered data ingestion with Zod normalisation and Jina Reader for LLM-friendly URL extraction.',
+    tags: ['React Native', 'TypeScript', 'Node.js', 'Expo Go', 'Claude API'],
+    live: 'https://www.supplementscanner.io/',
+    github: 'https://github.com/Owlsnap/SupplementScanner',
+    preview: supplementScannerOne,
+  },
+  {
+    id: '04',
+    title: 'Decentralised Exchange (DEX)',
+    desc: 'Multi-asset DEX supporting ETH and ERC20 tokens. Features token swaps with slippage calculation, liquidity pools, a flashloan mechanism, and OpenZeppelin security standards including Timelock delays and reentrancy guards.',
+    tags: ['Solidity', 'Foundry', 'Wagmi', 'Viem', 'Rainbowkit', 'Ethers.js'],
+    live: null,
+    github: 'https://github.com/Owlsnap',
+    preview: dex1,
+  },
+  {
+    id: '05',
+    title: 'E-Bookstore',
+    desc: 'Full-stack e-commerce site with user authentication, a complete checkout flow, and an admin dashboard.',
+    tags: ['React', 'Node', 'MongoDB', 'Firebase', 'Redux Toolkit', 'JWT'],
+    live: 'https://e-bookstore-app.vercel.app/',
+    github: 'https://github.com/Owlsnap/E-Bookstore-app',
+    preview: bookstoreOne,
+  },
+  {
+    id: '09',
+    title: 'World Flags Explorer',
+    desc: 'Country explorer built on the REST Countries API. Browse facts, filter by region, and navigate between bordering nations.',
+    tags: ['React', 'JavaScript', 'React Router', 'REST API'],
+    live: 'https://world-flag-app.netlify.app/',
+    github: 'https://github.com/Owlsnap/Flag-App',
+    preview: flagOne,
+  },
+]
 
 function Projects() {
+  const [hovered, setHovered] = useState(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const sectionRef = useRef(null)
+
+  const handleMouseMove = useCallback((e) => {
+    setMousePos({ x: e.clientX, y: e.clientY })
+  }, [])
+
+  const activeProject = projects.find(p => p.id === hovered)
+
+  // Clamp preview so it stays within viewport
+  const previewLeft = mousePos.x + 30 + 380 > window.innerWidth
+    ? mousePos.x - 400
+    : mousePos.x + 30
+  const previewTop = Math.max(10, Math.min(mousePos.y - 80, window.innerHeight - 300))
+
   return (
-    <section className="projects" id="projects">
-      <h1>Projects</h1>
-      <div className="projects__container">
-        <div className="project">
+    <section
+      className="projects"
+      id="projects"
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+    >
+      <div className="projects__header reveal">
+        <span className="section-label">Selected Work</span>
+        <span className="projects__count">{projects.length} projects</span>
+      </div>
 
-            {/* SuppplementScanner project */}
-          <div className="double-project-image">
-            <img
-              src={supplementScannerOne}
-              alt="supplementscanner"
-              className="project__image"
-            />
-            <img
-              src={supplementScannerTwo}
-              alt="supplementscanner"
-              className="project__image__slide"
-            />
-          </div>
-          <div className="project__info">
-            <h2>AI-powered Supplement Comparison Tool</h2>
-            <p>
-                A web application that scrapes and compares
-                dietary supplements, providing users with price per unit, 
-                all automatically collected and calculated using AI.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.supplementscanner.io/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
+      <div className="projects__list">
+        {projects.map((project, i) => (
+          <a
+            key={project.id}
+            href={project.live ?? project.github}
+            target="_blank"
+            rel="noreferrer"
+            className={`project-row reveal reveal-delay-${Math.min(i, 4)}`}
+            onMouseEnter={() => setHovered(project.id)}
+            onMouseLeave={() => setHovered(null)}
+          >
+            <span className="project-row__number">{project.id}</span>
 
-        {/* bookstore project */}
-        <div className="project">
-          <div className="double-project-image">
-            <img
-              src={bookstoreOne}
-              alt="bookstore"
-              className="project__image"
-            />
-            <img
-              src={bookstoreTwo}
-              alt="bookstore"
-              className="project__image__slide"
-            />
-          </div>
-          <div className="project__info">
-            <h2>E-Bookstore with admin dashboard</h2>
-            <p>
-              E-commerce site with login functionality, checkout and admin
-              dashboard to manage products.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://e-bookstore-app.vercel.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
+            <div className="project-row__title-wrap">
+              <span className="project-row__title">{project.title}</span>
+            </div>
 
-        {/* todo app */}
-        <div className="project">
-          <div className="project__image__container">
-            <img src={todo} alt="advice generator" className="project__image" />
-          </div>
-          <div className="project__info">
-            <h2>ToDo app</h2>
-            <p>
-              Modern task manager to add, edit and complete todos, all stored locally with ability to search and filter in the todo list.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://to-do-app-rho-mocha.vercel.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
+            <div className="project-row__tags">
+              {project.tags.slice(0, 4).map(tag => (
+                <span key={tag} className="project-row__tag">{tag}</span>
+              ))}
+            </div>
 
-        {/* spotify project */}
-        <div className="project">
-          <div className="double-project-image">
-            <img src={spotifyOne} alt="spotify" className="project__image" />
-            <img
-              src={spotifyTwo}
-              alt="spotify"
-              className="project__image__slide"
-            />
-          </div>
-          <div className="project__info">
-            <h2>Spotify Clone</h2>
-            <p>Connect to your personal spotify with the Spotify API.</p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://fastidious-beignet-9f0e97.netlify.app"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
+            <div className="project-row__links">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="project-row__github"
+                onClick={e => e.stopPropagation()}
+              >
+                GH ↗
+              </a>
+              <span className="project-row__arrow">↗</span>
+            </div>
+          </a>
+        ))}
+      </div>
 
-        {/* flag app */}
-        <div className="project">
-          <div className="double-project-image">
-            <img src={flagOne} alt="flag app" className="project__image" />
-            <img
-              src={flagTwo}
-              alt="flag app"
-              className="project__image__slide"
-            />
-          </div>
-          <div className="project__info">
-            <h2>Flag App</h2>
-            <p>
-              Explore and discover facts about countries around the globe and
-              navigate through borders. Done with REST Countries API.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://world-flag-app.netlify.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
-
-        {/* klarna project */}
-        <div className="project">
-          <div className="project__image__container">
-            <img src={klarna} alt="klarna" className="project__image" />
-          </div>
-          <div className="project__info">
-            <h2>Klarna Checkout</h2>
-            <p>
-              Set up a checkout with Klarna for your E-commerce/online store.
-              Demo from Klarna
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://demo.klarna.dev/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
-
-        {/* password generator */}
-        <div className="project">
-          <div className="project__image__container">
-            <img
-              src={password}
-              alt="password generator"
-              className="project__image"
-            />
-          </div>
-          <div className="project__info">
-            <h2>Password Generator</h2>
-            <p>
-              Generate randomized passwords and copy to clipboard with options
-              to include numbers, symbols and upper/lowercase letters.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://vocal-platypus-ce75c7.netlify.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
-
-        {/* advice generator */}
-        <div className="project">
-          <div className="project__image__container">
-            <img src={advice} alt="advice generator" className="project__image" />
-          </div>
-          <div className="project__info">
-            <h2>Advice Generator</h2>
-            <p>Get random advice from the Advice Slip API.</p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://timely-clafoutis-221a8f.netlify.app/"
-              className="project__cta"
-            >
-              View project
-            </a>
-          </div>
-        </div>
-
+      {/* Floating cursor preview */}
+      <div
+        className={`project-preview${hovered && activeProject?.preview ? ' visible' : ''}`}
+        style={{ left: previewLeft, top: previewTop }}
+      >
+        {activeProject?.preview && (
+          <>
+            <img src={activeProject.preview} alt={activeProject.title} />
+            <div className="project-preview__caption">
+              <span>Selected work</span>
+              <strong>{activeProject.title}</strong>
+            </div>
+          </>
+        )}
       </div>
     </section>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

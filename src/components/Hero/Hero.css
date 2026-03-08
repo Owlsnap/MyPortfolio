@@ -1,169 +1,279 @@
-/* Modern Black & White Hero Section */
+/* ─── Hero ───────────────────────────────────────────── */
 .hero {
-    background: #000000;
-    color: #ffffff;
-    padding: 8rem 0 0 0;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid #ffffff;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Ambient orange orb */
+.hero__orb {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s linear;
+  will-change: transform;
+}
+
+/* ─── Main hero content ─── */
 .hero__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    flex-grow: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 8rem 6rem 4rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
+.hero__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero__label {
+  font-family: 'MoonLight', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero__label::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
 
 .hero__title {
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    font-weight: 900;
-    margin: 0 0 1rem 0;
-    text-shadow: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    line-height: 1.1;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.hero__greeting {
+  display: block;
+  font-family: 'MoonLight', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 .hero__name {
-    display: block;
-    color: #cccccc;
-    font-weight: 300;
-    margin-top: 0.5rem;
+  display: block;
+  font-family: 'MoonBold', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
+.hero__tagline {
+  font-family: 'MoonLight', sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Resume download link */
+.hero__resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'MoonLight', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  align-self: center;
+}
+.hero__resume-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ─── Hero right / photo ─── */
+.hero__right {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hero__image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Orange frame drifts further into the shadow on hover */
+.hero__image-wrap::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: -16px;
+  bottom: -16px;
+  border: 2px solid var(--accent);
+  z-index: 0;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hero__image-wrap:hover::after {
+  transform: translate(8px, 10px);
+}
+
+/* Image pops out toward the viewer (opposite direction) */
 #image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    margin: 2rem 0;
-    object-fit: cover;
-    filter: grayscale(100%) contrast(1.2);
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.45s ease;
 }
 
-.hero__subtitle {
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    font-weight: 300;
-    margin: 1rem 0;
-    color: #cccccc;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+.hero__image-wrap:hover #image {
+  transform: translate(-8px, -10px);
+  box-shadow: 12px 16px 40px rgba(0, 0, 0, 0.4);
 }
 
-.hero__cta {
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #000000;
-    background: #ffffff;
-    padding: 1rem 2rem;
-    border: 2px solid #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.2s ease;
-    margin-top: 1rem;
-}
-
-.hero__cta:hover {
-    background: #000000;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-.subtitle__CTA {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
-
+/* ─── About ─────────────────────────────────────────── */
 .about {
-    background: #ffffff;
-    color: #000000;
-    padding: 6rem 2rem;
-    text-align: left;
-    border-top: 2px solid #000000;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 6rem 6rem;
+  position: relative;
+  z-index: 1;
 }
 
-.about__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+.about__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about__label-col {
+  position: sticky;
+  top: 6rem;
+}
+
+.about__label-col .section-label {
+  margin-bottom: 1.5rem;
+}
+
+.about__index {
+  font-family: 'MoonLight', sans-serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--border2);
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.about__text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about__paragraph {
+  font-family: 'MoonLight', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+
+.about__paragraph:first-child {
+  font-family: 'MoonRegular', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media screen and (max-width: 1024px) {
+  .hero__container {
+    padding: 7rem 3rem 4rem;
     gap: 3rem;
-    line-height: 1.7;
+  }
+  #image {
+    width: 240px;
+    height: 310px;
+  }
 }
-
-.about__section {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.about__section:first-child {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-#aboutTop, #aboutMiddle, #aboutBottom {
-    display: block;
-    margin-bottom: 2rem;
-}
-
 
 @media screen and (max-width: 768px) {
-    .hero {
-        padding-top: 5rem;
-    }
+  .hero__container {
+    flex-direction: column-reverse;
+    padding: 6rem 1.5rem 3rem;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
 
-    .hero__container {
-        padding: 3rem 1rem;
-    }
+  .hero__right {
+    align-self: center;
+  }
 
-    .hero__title {
-        font-size: clamp(2rem, 10vw, 4rem);
-        letter-spacing: 0.02em;
-    }
+  #image {
+    width: 200px;
+    height: 250px;
+  }
 
-    #image {
-        width: 150px;
-        height: 150px;
-        margin: 1.5rem 0;
-    }
+  .hero__image-wrap::after {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
 
-    .hero__subtitle {
-        font-size: clamp(1rem, 6vw, 1.5rem);
-        letter-spacing: 0.15em;
-    }
+  .about {
+    padding: 4rem 1.5rem;
+  }
 
-    .hero__cta {
-        font-size: 0.9rem;
-        padding: 0.8rem 1.5rem;
-    }
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 
-    .about {
-        padding: 4rem 1rem;
-        text-align: center;
-    }
+  .about__label-col {
+    position: static;
+  }
 
-    .about__content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about__section {
-        font-size: 0.95rem;
-    }
-
-    .about__section:first-child {
-        font-size: 1rem;
-    }
+  .about__index {
+    font-size: 3rem;
+  }
 }

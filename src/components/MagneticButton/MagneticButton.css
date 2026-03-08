@@ -1,0 +1,66 @@
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.4rem;
+  border-radius: 100px;
+  font-family: 'MoonRegular', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: none;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+  white-space: nowrap;
+}
+
+/* Filled variant */
+.magnetic-btn--filled {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.magnetic-btn--filled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-warm);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+.magnetic-btn--filled:hover::before {
+  opacity: 1;
+}
+.magnetic-btn--filled span,
+.magnetic-btn--filled svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ghost variant */
+.magnetic-btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border2);
+}
+.magnetic-btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Icon inside button */
+.magnetic-btn .btn-icon {
+  display: inline-flex;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+.magnetic-btn:hover .btn-icon {
+  transform: translate(2px, -2px);
+}

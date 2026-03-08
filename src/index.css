@@ -1,73 +1,186 @@
+/* ─── Design Tokens ─────────────────────────────────── */
 :root {
+  --bg:           #0A0A0A;
+  --bg2:          #111111;
+  --surface:      #161616;
+  --border:       #1E1E1E;
+  --border2:      #2A2A2A;
+  --accent:       #FF5C2B;
+  --accent-warm:  #FFAA47;
+  --accent-glow:  rgba(255, 92, 43, 0.12);
+  --text:         #F0EFEB;
+  --text-muted:   #55554E;
+  --text-dim:     #888880;
+  --transition:   300ms ease;
+
   line-height: 1.5;
-
-  color-scheme: light dark;
-  color: rgb(219, 219, 217);
+  color-scheme: dark;
+  color: var(--text);
   overflow-x: hidden;
-
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
+[data-theme="light"] {
+  --bg:           #F8F6F2;
+  --bg2:          #EEECEA;
+  --surface:      #E6E2DC;
+  --border:       #DDDAD4;
+  --border2:      #C8C4BE;
+  --accent:       #E0451A;
+  --accent-warm:  #F7931E;
+  --accent-glow:  rgba(224, 69, 26, 0.08);
+  --text:         #0A0A0A;
+  --text-muted:   #5A5952;
+  --text-dim:     #3E3D38;
+  color-scheme: light;
+}
+
+/* ─── Font Faces ─────────────────────────────────────── */
 @font-face {
   font-family: 'Azonix';
   src: url('/Azonix.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'MoonBold';
   src: url('/Moon2.0-Bold.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'MoonLight';
   src: url('/Moon2.0-Light.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'MoonRegular';
   src: url('/Moon2.0-Regular.otf') format('opentype');
 }
 
-body {
-  font-family: 'MoonRegular', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-  scroll-padding-top: 4rem; /* Account for fixed navbar */
-}
-
-* {
+/* ─── Base ───────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Enhanced Smooth Scrolling */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Smooth scrolling for all elements */
-  * {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-padding-top: 4rem;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Smooth scroll for browsers that support it */
-@supports (scroll-behavior: smooth) {
-  html, body {
-    scroll-behavior: smooth;
-  }
+body {
+  font-family: 'MoonRegular', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  width: 100%;
+  transition: background var(--transition), color var(--transition);
+}
+
+@media (hover: none) {
+  body { cursor: auto; }
+}
+@media (hover: hover) {
+  body { cursor: none; }
+}
+
+/* ─── Custom Cursor ──────────────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, margin 0.2s, opacity 0.2s;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin-left: -18px;
+  margin-top: -18px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  transition: width 0.3s cubic-bezier(0.23,1,0.32,1),
+              height 0.3s cubic-bezier(0.23,1,0.32,1),
+              margin 0.3s cubic-bezier(0.23,1,0.32,1),
+              opacity 0.3s, border-color 0.3s;
+}
+
+.cursor-ring.hovered {
+  width: 58px;
+  height: 58px;
+  margin-left: -29px;
+  margin-top: -29px;
+  opacity: 0.3;
+  border-color: var(--accent-warm);
+}
+
+.cursor-dot.hovered {
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  margin-top: -2px;
+  opacity: 0.7;
+}
+
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── Section Label ──────────────────────────────────── */
+.section-label {
+  font-family: 'MoonLight', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ─── Smooth Scroll ──────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
