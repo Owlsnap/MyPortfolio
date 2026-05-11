@@ -87,7 +87,7 @@ function Hero() {
             <p className="about__paragraph reveal reveal-delay-2">
               Outside of code, I have a founder and innovation mentality — I love fast-paced,
               growth-heavy environments and I'm super eager to learn. I also hold a position at
-              AstraZeneca where I help part-time with app development and educate teams on agentic
+              AstraZeneca where I help part-time with app development and assist with agentic
               development workflows. Beyond work, I'm deeply passionate about fitness and
               bodybuilding, which keeps me disciplined, persistent, and always pushing forward.
             </p>

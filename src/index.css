@@ -9,8 +9,8 @@
   --accent-warm:  #FFAA47;
   --accent-glow:  rgba(255, 92, 43, 0.12);
   --text:         #F0EFEB;
-  --text-muted:   #55554E;
-  --text-dim:     #888880;
+  --text-muted:   #888880;
+  --text-dim:     #B2B2AA;
   --transition:   300ms ease;
 
   line-height: 1.5;

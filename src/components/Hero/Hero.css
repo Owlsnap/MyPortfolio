@@ -213,14 +213,14 @@
 
 .about__paragraph {
   font-family: 'MoonLight', sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
   color: var(--text-dim);
 }
 
 .about__paragraph:first-child {
   font-family: 'MoonRegular', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--text);
 }
 
