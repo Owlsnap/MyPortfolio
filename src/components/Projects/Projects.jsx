@@ -2,15 +2,15 @@ import { useState, useCallback, useRef } from 'react'
 import './Projects.css'
 import osciwave1 from '../../assets/osciwave1.png'
 import osciwave2 from '../../assets/osciwave2.png'
-import spontana1 from '../../assets/spontana1.png'
+import spontana1 from '../../assets/spontana_preview.png'
 import spontana2 from '../../assets/spontana2.png'
-import supplementScannerOne from '../../assets/suppscanner_new.png'
+import supplementScannerOne from '../../assets/suppscanner_preview.png'
 import supplementScannerTwo from '../../assets/suppscanner_img2.jpg'
 import bookstoreOne from '../../assets/bookstoreImageOne.png'
 import bookstoreTwo from '../../assets/bookstoreImgTwo.jpg'
 import flagOne from '../../assets/flag.png'
 import flagTwo from '../../assets/flag2.png'
-import dex1 from '../../assets/dex1.png'
+import dex1 from '../../assets/dex_preview.png'
 
 const projects = [
   {
@@ -42,10 +42,10 @@ const projects = [
   },
   {
     id: '04',
-    title: 'Decentralised Exchange (DEX)',
+    title: 'ProtoSwap DEX',
     desc: 'Multi-asset DEX supporting ETH and ERC20 tokens. Features token swaps with slippage calculation, liquidity pools, a flashloan mechanism, and OpenZeppelin security standards including Timelock delays and reentrancy guards.',
     tags: ['Solidity', 'Foundry', 'Wagmi', 'Viem', 'Rainbowkit', 'Ethers.js'],
-    live: null,
+    live: 'https://protoswap-lemon.vercel.app/',
     github: 'https://github.com/Owlsnap',
     preview: dex1,
   },
