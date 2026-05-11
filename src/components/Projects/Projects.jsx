@@ -16,7 +16,7 @@ const projects = [
   {
     id: '01',
     title: 'Osciwave.io',
-    desc: 'Landing page for a mobile app that lets users mint audio files as NFTs and use them as unique payment confirmation sounds.',
+    desc: 'Mobile app that lets users mint audio files as 1-of-1 ERC721 NFTs and use them as unique payment confirmation sounds.',
     tags: ['Next.js 15', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Native', 'Wagmi'],
     live: 'https://osciwave.io',
     github: 'https://github.com/Owlsnap/Osciwave/tree/master',
@@ -25,7 +25,7 @@ const projects = [
   {
     id: '02',
     title: 'Spontana',
-    desc: 'Stockholm event aggregator built for spontaneous nights out. Pulls live events from Ticketmaster and Visit Stockholm APIs.',
+    desc: 'Stockholm event aggregator built for spontaneous nights out. Pulls live events from Ticketmaster and Visit Stockholm APIs, with support for user-created events.',
     tags: ['React', 'JavaScript', 'Supabase', 'React Router', 'Vite'],
     live: 'https://spontana.app',
     github: 'https://github.com/Owlsnap/spontana',
@@ -34,7 +34,7 @@ const projects = [
   {
     id: '03',
     title: 'Supplement Scanner',
-    desc: 'Barscanning app that gives users a quality analysis on dosage and ingredients, plus use-case descriptions. AI-powered data ingestion with Zod normalisation and Jina Reader for LLM-friendly URL extraction.',
+    desc: 'Comprehensive supplement index where users can deep-dive into ingredients, dosages, synergies, and cautions. All information is science-backed with studies sourced from PubMed.',
     tags: ['React Native', 'TypeScript', 'Node.js', 'Expo Go', 'Claude API'],
     live: 'https://www.supplementscanner.io/',
     github: 'https://github.com/Owlsnap/SupplementScanner',
@@ -43,7 +43,7 @@ const projects = [
   {
     id: '04',
     title: 'ProtoSwap DEX',
-    desc: 'Multi-asset DEX supporting ETH and ERC20 tokens. Features token swaps with slippage calculation, liquidity pools, a flashloan mechanism, and OpenZeppelin security standards including Timelock delays and reentrancy guards.',
+    desc: 'Multi-asset DEX supporting ETH and ERC20 tokens. Features token swaps with slippage calculation, liquidity pools, a flash loan mechanism, and OpenZeppelin security standards including Timelock delays and reentrancy guards.',
     tags: ['Solidity', 'Foundry', 'Wagmi', 'Viem', 'Rainbowkit', 'Ethers.js'],
     live: 'https://protoswap-lemon.vercel.app/',
     github: 'https://github.com/Owlsnap',
@@ -59,7 +59,7 @@ const projects = [
     preview: bookstoreOne,
   },
   {
-    id: '09',
+    id: '06',
     title: 'World Flags Explorer',
     desc: 'Country explorer built on the REST Countries API. Browse facts, filter by region, and navigate between bordering nations.',
     tags: ['React', 'JavaScript', 'React Router', 'REST API'],
@@ -148,6 +148,7 @@ function Projects() {
             <div className="project-preview__caption">
               <span>Selected work</span>
               <strong>{activeProject.title}</strong>
+              <p className="project-preview__desc">{activeProject.desc}</p>
             </div>
           </>
         )}

@@ -20,6 +20,7 @@ function App() {
 
   // Custom cursor
   useEffect(() => {
+    if (window.matchMedia('(hover: none)').matches) return
     const dot = dotRef.current
     const ringEl = ringRef.current
     if (!dot || !ringEl) return

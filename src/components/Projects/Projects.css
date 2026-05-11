@@ -225,6 +225,14 @@
   margin-top: 0.15rem;
 }
 
+.project-preview__desc {
+  font-family: 'MoonLight', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
 /* ─── Responsive ─── */
 @media screen and (max-width: 1024px) {
   .projects {
@@ -250,11 +258,16 @@
   }
   .project-row__title {
     font-size: clamp(1.1rem, 5vw, 1.5rem);
+    color: var(--text);
   }
   .project-row__tags {
     display: none;
   }
   .project-preview {
     display: none;
+  }
+  .project-row__github {
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
   }
 }

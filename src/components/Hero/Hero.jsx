@@ -33,7 +33,7 @@ function Hero() {
           </h1>
 
           <p className="hero__tagline reveal reveal-delay-2">
-            Frontend-focused developer specialising in React, Web3 &amp; AI-driven products.
+            Frontend-focused developer specializing in React, Web3 &amp; AI-driven products.
             I turn ideas into polished, high-performance interfaces.
           </p>
 
@@ -71,25 +71,26 @@ function Hero() {
           </div>
           <div className="about__text-col">
             <p className="about__paragraph reveal">
-              Frontend-heavy developer with fullstack capability, focused on building practical products
+              Frontend-heavy developer with full-stack capability, focused on building practical products
               with React, Next.js, and TypeScript. Currently working as an Agentic Developer at SISP,
               building the MVP for Sweden Startup Next — a platform that collects and showcases data on
               Sweden's startup ecosystem. I work in fast-paced, cross-functional teams with spec-driven
               development and modern AI-assisted workflows using Claude.
             </p>
             <p className="about__paragraph reveal reveal-delay-1">
-              Deeply passionate about Web3 and decentralised finance. I'm the founder of Osciwave —
-              a Web3 mobile app that mints your favourite sound as a 1-of-1 ERC721 NFT used to
-              verify payments. I've also built a full decentralised exchange (DEX) with multi-asset
-              support, liquidity pools, flashloans, and OpenZeppelin security standards — all in
-              Solidity with Foundry, Wagmi, and Viem.
+              Deeply passionate about Web3 and decentralized finance. I'm the founder of Osciwave —
+              a Web3 mobile app that mints your favorite sound as a 1-of-1 ERC721 NFT used as a
+              unique payment confirmation sound. I've also built a full decentralized exchange (DEX)
+              with multi-asset support, liquidity pools, flash loans, and OpenZeppelin security
+              standards — all in Solidity with Foundry, Wagmi, and Viem.
             </p>
             <p className="about__paragraph reveal reveal-delay-2">
-              Outside of code, I have a founder and innovation mentality — I love fast-paced,
-              growth-heavy environments and I'm super eager to learn. I also hold a position at
-              AstraZeneca where I help part-time with app development and assist with agentic
-              development workflows. Beyond work, I'm deeply passionate about fitness and
-              bodybuilding, which keeps me disciplined, persistent, and always pushing forward.
+              Outside of code, I have an entrepreneurial mindset — I thrive in fast-paced,
+              growth-heavy environments and I'm always eager to learn. I work full-time at
+              AstraZeneca as a machine technician, and having made clear my interest in development,
+              I've taken on app and agentic development projects there on the side. Beyond work,
+              I'm deeply passionate about fitness and bodybuilding, which keeps me disciplined,
+              persistent, and always pushing forward.
             </p>
           </div>
         </div>

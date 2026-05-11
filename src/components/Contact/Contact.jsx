@@ -75,7 +75,7 @@ function Contact() {
         </h2>
         <p className="contact__description">
           Ready to bring your vision to life? Whether you have a project in mind
-          or just want to say hello, I'm all ears.
+          or just want to say hello, I'd love to hear from you.
         </p>
       </div>
 

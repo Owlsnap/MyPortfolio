@@ -224,6 +224,16 @@
   color: var(--text);
 }
 
+@media (hover: none) {
+  .hero__image-wrap:hover #image {
+    transform: none;
+    box-shadow: none;
+  }
+  .hero__image-wrap:hover::after {
+    transform: none;
+  }
+}
+
 /* ─── Responsive ─────────────────────────────────────── */
 @media screen and (max-width: 1024px) {
   .hero__container {

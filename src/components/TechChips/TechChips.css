@@ -209,4 +209,7 @@
   .chips-container::after {
     width: 60px;
   }
+  .tech__category-list li {
+    color: var(--text);
+  }
 }

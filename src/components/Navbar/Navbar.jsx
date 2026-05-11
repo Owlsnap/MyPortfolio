@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.svg'
 
@@ -25,12 +25,12 @@ const MoonIcon = () => (
 function Navbar({ theme, setTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 30)
 
-      // Scroll-spy
       const sections = ['hero', 'projects', 'technologies', 'contact']
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
@@ -44,26 +44,44 @@ function Navbar({ theme, setTheme }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const closeMenu = useCallback(() => setMenuOpen(false), [])
+
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-      <a href="#hero" className="navbar__logo">
-        <img src={logo} alt="avalentin" className="navbar__logo-img" />
-      </a>
-      <div className="navbar__right">
-        <div className="navbar__links">
-          <a href="#projects"     className={`navbar__link${activeSection === 'projects'     ? ' active' : ''}`}>Projects</a>
-          <a href="#technologies" className={`navbar__link${activeSection === 'technologies' ? ' active' : ''}`}>Tech</a>
-          <a href="#contact"      className={`navbar__link${activeSection === 'contact'      ? ' active' : ''}`}>Contact</a>
+    <>
+      <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+        <a href="#hero" className="navbar__logo" onClick={closeMenu}>
+          <img src={logo} alt="avalentin" className="navbar__logo-img" />
+        </a>
+        <div className="navbar__right">
+          <div className="navbar__links">
+            <a href="#projects"     className={`navbar__link${activeSection === 'projects'     ? ' active' : ''}`}>Projects</a>
+            <a href="#technologies" className={`navbar__link${activeSection === 'technologies' ? ' active' : ''}`}>Tech</a>
+            <a href="#contact"      className={`navbar__link${activeSection === 'contact'      ? ' active' : ''}`}>Contact</a>
+          </div>
+          <button
+            className="navbar__theme-toggle"
+            onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+          <button
+            className={`navbar__hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
         </div>
-        <button
-          className="navbar__theme-toggle"
-          onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-        </button>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      <div className={`navbar__mobile-menu${menuOpen ? ' open' : ''}`}>
+        <a href="#projects"     className="navbar__mobile-link" onClick={closeMenu}>Projects</a>
+        <a href="#technologies" className="navbar__mobile-link" onClick={closeMenu}>Tech</a>
+        <a href="#contact"      className="navbar__mobile-link" onClick={closeMenu}>Contact</a>
       </div>
-    </nav>
+    </>
   )
 }
 
