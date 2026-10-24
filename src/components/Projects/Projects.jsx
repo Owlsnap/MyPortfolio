@@ -11,12 +11,12 @@ import dex1 from '../../assets/dex_preview.png'
 const projects = [
   {
     id: '01',
-    title: 'Osciwave.io',
-    desc: 'Founded and built from scratch. Every payment sounds the same — Osciwave lets users own theirs by minting a favorite sound as a 1-of-1 ERC721 NFT that plays as their personal payment confirmation.',
-    tags: ['Next.js 15', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Native', 'Wagmi'],
-    live: 'https://osciwave.io',
-    github: 'https://github.com/Owlsnap/Osciwave/tree/master',
-    preview: osciwave1,
+    title: 'Supplement Scanner',
+    desc: 'Supplement labels are full of marketing and short on evidence. Supplement Scanner breaks down ingredients, dosages, synergies, and cautions — every claim backed by studies sourced from PubMed.',
+    tags: ['React Native', 'TypeScript', 'Node.js', 'Expo Go', 'Claude API'],
+    live: 'https://www.supplementscanner.io/',
+    github: 'https://github.com/Owlsnap/SupplementScanner',
+    preview: supplementScannerOne,
   },
   {
     id: '02',
@@ -29,12 +29,12 @@ const projects = [
   },
   {
     id: '03',
-    title: 'Supplement Scanner',
-    desc: 'Supplement labels are full of marketing and short on evidence. Supplement Scanner breaks down ingredients, dosages, synergies, and cautions — every claim backed by studies sourced from PubMed.',
-    tags: ['React Native', 'TypeScript', 'Node.js', 'Expo Go', 'Claude API'],
-    live: 'https://www.supplementscanner.io/',
-    github: 'https://github.com/Owlsnap/SupplementScanner',
-    preview: supplementScannerOne,
+    title: 'Osciwave.io',
+    desc: 'Founded and built from scratch. Every payment sounds the same — Osciwave lets users own theirs by minting a favorite sound as a 1-of-1 ERC721 NFT that plays as their personal payment confirmation.',
+    tags: ['Next.js 15', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Native', 'Wagmi'],
+    live: 'https://osciwave.io',
+    github: 'https://github.com/Owlsnap/Osciwave/tree/master',
+    preview: osciwave1,
   },
   {
     id: '04',

@@ -82,11 +82,11 @@ function Hero() {
               in a cross-functional team using spec-driven development and AI-assisted workflows with Claude.
             </p>
             <p className="about__paragraph reveal reveal-delay-1">
-              I like building my own products, not just features. I'm the founder of Osciwave —
-              a Web3 mobile app that mints your favorite sound as a 1-of-1 ERC721 NFT used as a
-              unique payment confirmation sound. I've also built a full decentralized exchange (DEX)
-              with multi-asset support, liquidity pools, flash loans, and OpenZeppelin security
-              standards — all in Solidity with Foundry, Wagmi, and Viem.
+              I like building my own products, not just features. I built Supplement Scanner —
+              a tool that cuts through marketing on supplement labels by breaking down ingredients,
+              dosages, synergies, and cautions, with every claim backed by studies sourced from PubMed.
+              I also built Spontana, which puts Stockholm's events in one place — live data from
+              Ticketmaster and Visit Stockholm alongside events created by users.
             </p>
             <p className="about__paragraph reveal reveal-delay-2">
               Outside of code, I have an entrepreneurial mindset — I think in terms of users, outcomes,
