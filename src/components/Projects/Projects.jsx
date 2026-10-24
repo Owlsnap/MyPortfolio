@@ -1,22 +1,18 @@
 import { useState, useCallback, useRef } from 'react'
 import './Projects.css'
-import osciwave1 from '../../assets/osciwave1.png'
+import osciwave1 from '../../assets/osciwave1.webp'
 import osciwave2 from '../../assets/osciwave2.png'
 import spontana1 from '../../assets/spontana_preview.png'
 import spontana2 from '../../assets/spontana2.png'
 import supplementScannerOne from '../../assets/suppscanner_preview.png'
 import supplementScannerTwo from '../../assets/suppscanner_img2.jpg'
-import bookstoreOne from '../../assets/bookstoreImageOne.png'
-import bookstoreTwo from '../../assets/bookstoreImgTwo.jpg'
-import flagOne from '../../assets/flag.png'
-import flagTwo from '../../assets/flag2.png'
 import dex1 from '../../assets/dex_preview.png'
 
 const projects = [
   {
     id: '01',
     title: 'Osciwave.io',
-    desc: 'Mobile app that lets users mint audio files as 1-of-1 ERC721 NFTs and use them as unique payment confirmation sounds.',
+    desc: 'Founded and built from scratch. Every payment sounds the same — Osciwave lets users own theirs by minting a favorite sound as a 1-of-1 ERC721 NFT that plays as their personal payment confirmation.',
     tags: ['Next.js 15', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Native', 'Wagmi'],
     live: 'https://osciwave.io',
     github: 'https://github.com/Owlsnap/Osciwave/tree/master',
@@ -25,7 +21,7 @@ const projects = [
   {
     id: '02',
     title: 'Spontana',
-    desc: 'Stockholm event aggregator built for spontaneous nights out. Pulls live events from Ticketmaster and Visit Stockholm APIs, with support for user-created events.',
+    desc: 'Finding something to do tonight means checking five different sites. Spontana puts Stockholm\'s events in one place — live data from Ticketmaster and Visit Stockholm, plus events created by users.',
     tags: ['React', 'JavaScript', 'Supabase', 'React Router', 'Vite'],
     live: 'https://spontana.app',
     github: 'https://github.com/Owlsnap/spontana',
@@ -34,7 +30,7 @@ const projects = [
   {
     id: '03',
     title: 'Supplement Scanner',
-    desc: 'Comprehensive supplement index where users can deep-dive into ingredients, dosages, synergies, and cautions. All information is science-backed with studies sourced from PubMed.',
+    desc: 'Supplement labels are full of marketing and short on evidence. Supplement Scanner breaks down ingredients, dosages, synergies, and cautions — every claim backed by studies sourced from PubMed.',
     tags: ['React Native', 'TypeScript', 'Node.js', 'Expo Go', 'Claude API'],
     live: 'https://www.supplementscanner.io/',
     github: 'https://github.com/Owlsnap/SupplementScanner',
@@ -43,29 +39,11 @@ const projects = [
   {
     id: '04',
     title: 'ProtoSwap DEX',
-    desc: 'Multi-asset DEX supporting ETH and ERC20 tokens. Features token swaps with slippage calculation, liquidity pools, a flash loan mechanism, and OpenZeppelin security standards including Timelock delays and reentrancy guards.',
+    desc: 'A full decentralized exchange, from smart contracts to UI. Swap ETH and ERC20 tokens with clear slippage, provide liquidity, or take flash loans — secured with OpenZeppelin Timelock delays and reentrancy guards.',
     tags: ['Solidity', 'Foundry', 'Wagmi', 'Viem', 'Rainbowkit', 'Ethers.js'],
     live: 'https://protoswap-lemon.vercel.app/',
     github: 'https://github.com/Owlsnap',
     preview: dex1,
-  },
-  {
-    id: '05',
-    title: 'E-Bookstore',
-    desc: 'Full-stack e-commerce site with user authentication, a complete checkout flow, and an admin dashboard.',
-    tags: ['React', 'Node', 'MongoDB', 'Firebase', 'Redux Toolkit', 'JWT'],
-    live: 'https://e-bookstore-app.vercel.app/',
-    github: 'https://github.com/Owlsnap/E-Bookstore-app',
-    preview: bookstoreOne,
-  },
-  {
-    id: '06',
-    title: 'World Flags Explorer',
-    desc: 'Country explorer built on the REST Countries API. Browse facts, filter by region, and navigate between bordering nations.',
-    tags: ['React', 'JavaScript', 'React Router', 'REST API'],
-    live: 'https://world-flag-app.netlify.app/',
-    github: 'https://github.com/Owlsnap/Flag-App',
-    preview: flagOne,
   },
 ]
 

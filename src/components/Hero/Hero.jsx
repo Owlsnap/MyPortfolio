@@ -25,7 +25,7 @@ function Hero() {
 
       <div className="hero__container">
         <div className="hero__left">
-          <p className="hero__label reveal">Frontend Developer · Stockholm</p>
+          <p className="hero__label reveal">Product Engineer · Stockholm</p>
 
           <h1 className="hero__title reveal reveal-delay-1">
             <span className="hero__greeting">Hello,</span>
@@ -33,8 +33,8 @@ function Hero() {
           </h1>
 
           <p className="hero__tagline reveal reveal-delay-2">
-            Frontend-focused developer specializing in React, Web3 &amp; AI-driven products.
-            I turn ideas into polished, high-performance interfaces.
+            I take products from idea to shipped — across web, mobile, Web3 &amp; AI.
+            I care about the problem as much as the code that solves it.
           </p>
 
           <div className="hero__ctas reveal reveal-delay-3">
@@ -71,22 +71,25 @@ function Hero() {
           </div>
           <div className="about__text-col">
             <p className="about__paragraph reveal">
-              Frontend-heavy developer with full-stack capability, focused on building practical products
-              with React, Next.js, and TypeScript. Currently working as an Agentic Developer at SISP,
-              building the MVP for Sweden Startup Next — a platform that collects and showcases data on
-              Sweden's startup ecosystem. I work in fast-paced, cross-functional teams with spec-driven
-              development and modern AI-assisted workflows using Claude.
+              I own features end to end — from understanding the user problem and shaping the spec,
+              to building across the stack and iterating after launch. My strongest tools are React,
+              Next.js, and TypeScript, but I reach for whatever gets the product in front of users
+              fastest. I currently work part-time as an AI Developer at Litesmartare.se, building
+              AI-driven automation that saves Swedish small businesses time on their everyday work.
+              Before that, I interned as an Agentic Developer at SISP, building the MVP for Sweden
+              Startup Next — a platform that collects and showcases data on Sweden's startup ecosystem —
+              in a cross-functional team using spec-driven development and AI-assisted workflows with Claude.
             </p>
             <p className="about__paragraph reveal reveal-delay-1">
-              Deeply passionate about Web3 and decentralized finance. I'm the founder of Osciwave —
+              I like building my own products, not just features. I'm the founder of Osciwave —
               a Web3 mobile app that mints your favorite sound as a 1-of-1 ERC721 NFT used as a
               unique payment confirmation sound. I've also built a full decentralized exchange (DEX)
               with multi-asset support, liquidity pools, flash loans, and OpenZeppelin security
               standards — all in Solidity with Foundry, Wagmi, and Viem.
             </p>
             <p className="about__paragraph reveal reveal-delay-2">
-              Outside of code, I have an entrepreneurial mindset — I thrive in fast-paced,
-              growth-heavy environments and I'm always eager to learn. I work full-time at
+              Outside of code, I have an entrepreneurial mindset — I think in terms of users, outcomes,
+              and what to build next, and I thrive in fast-paced, growth-heavy environments. I work full-time at
               AstraZeneca as a machine technician, and having made clear my interest in development,
               I've taken on app and agentic development projects there on the side. Beyond work,
               I'm deeply passionate about fitness and bodybuilding, which keeps me disciplined,
