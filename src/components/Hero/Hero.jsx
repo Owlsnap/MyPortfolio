@@ -25,11 +25,12 @@ function Hero() {
 
       <div className="hero__container">
         <div className="hero__left">
-          <p className="hero__label reveal">Product Engineer · Stockholm</p>
+          <p className="hero__label reveal">Based in Stockholm</p>
 
           <h1 className="hero__title reveal reveal-delay-1">
-            <span className="hero__greeting">Hello,</span>
-            <span className="hero__name">I'm Alex Blom.</span>
+            <span className="hero__name">Alex Valentin Blom</span>
+            <span className="hero__role">Product Engineer</span>
+            <span className="hero__role hero__role--accent">AI Automation</span>
           </h1>
 
           <p className="hero__tagline reveal reveal-delay-2">
